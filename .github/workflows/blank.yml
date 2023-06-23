@@ -29,7 +29,7 @@ jobs:
         env: 
           ENV_B: B
           ENV_A: a
-          ENV_HELLO: "hello wor${ENV_B}.ld!"
+          ENV_HELLO: hello wor${ENV_B}.ld! shshss${{env.ENV_B}}qqq 
         run: echo  $ENV_HELLO $ENV_A  ${{ secrets.TEST }}
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
