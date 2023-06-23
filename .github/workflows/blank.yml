@@ -27,8 +27,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         env: 
+          ENV_B: B
           ENV_A: a
-          ENV_HELLO: hello world!
+          ENV_HELLO: "hello wor$ENV_B.ld!"
         run: echo  $ENV_HELLO $ENV_A  ${{ secrets.TEST }}
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
