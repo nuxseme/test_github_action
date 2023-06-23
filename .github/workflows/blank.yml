@@ -18,7 +18,8 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    env:
+      ENV_C: C
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -29,7 +30,7 @@ jobs:
         env: 
           ENV_B: B
           ENV_A: a
-          ENV_HELLO: hello wor${ENV_B}.ld! shshss${{env.ENV_B}}qqq 
+          ENV_HELLO: he${{ ENV_B }}llo wor${ ENV_B }.ld! shshss${{ env.ENV_B }}qq${{ env.ENV_C }}q 
         run: echo  $ENV_HELLO $ENV_A  ${{ secrets.TEST }}
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
